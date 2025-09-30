@@ -1,16 +1,45 @@
-# React + Vite
+# 💬 Chatalk - React Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive chat application built with **React**, **React Router**, and **Tailwind CSS**.  
+It includes **authentication (login)**, a **dashboard with sidebar + navbar**, and a **real-time styled chat interface**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- 🔐 **Login system** (email & password based)
+- 🎨 **Light/Dark Theme** toggle
+- 📌 **Sidebar** with connected users
+- 🧭 **Navbar** with user profile, theme toggle & logout
+- 💬 **Chat Page**
+  - Fixed header with username
+  - Scrollable message area
+  - Chat input box
+- 📱 **Fully Responsive UI** (works on desktop & mobile)
+- 🎭 Smooth transitions & clean design using **Tailwind CSS**
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖥️ Tech Stack
+- ⚛️ React (Vite)
+- 🎨 Tailwind CSS
+- 🔄 React Router DOM
+- 🧩 React Icons
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+src/
+├── assets/ # Images & static files
+├── components/ # Navbar, Sidebar, ChatPage, etc.
+├── context/ # Theme context
+├── pages/ # Login, Signup, Dashboard
+├── App.jsx # Main app routes
+├── main.jsx # Entry point
+
+
+🔑 Demo Login
+
+Use this account to log in:
+
+Email: malavika@gmail.com
+Password: hello123
