@@ -1,0 +1,184 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "email": "alice@example.com",
+      "status": "online",
+      "lastSeen": "2025-09-24T10:30:00Z",
+      "photo": "https://i.pravatar.cc/150?u=alice"
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "email": "bob@example.com",
+      "status": "offline",
+      "lastSeen": "2025-09-24T09:45:00Z",
+      "photo": "https://i.pravatar.cc/150?u=bob"
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "status": "online",
+      "lastSeen": "2025-09-24T11:05:00Z",
+      "photo": "https://i.pravatar.cc/150?u=charlie"
+    },
+    {
+      "id": "4",
+      "name": "Diana",
+      "email": "diana@example.com",
+      "status": "offline",
+      "lastSeen": "2025-09-24T08:15:00Z",
+      "photo": "https://i.pravatar.cc/150?u=diana"
+    },
+    {
+      "id": "5",
+      "name": "Ethan",
+      "email": "ethan@example.com",
+      "status": "online",
+      "lastSeen": "2025-09-24T12:00:00Z",
+      "photo": "https://i.pravatar.cc/150?u=ethan"
+    },
+    {
+      "id": "6",
+      "name": "Fiona",
+      "email": "fiona@example.com",
+      "status": "offline",
+      "lastSeen": "2025-09-24T07:50:00Z",
+      "photo": "https://i.pravatar.cc/150?u=fiona"
+    },
+    {
+      "id": "7",
+      "name": "George",
+      "email": "george@example.com",
+      "status": "online",
+      "lastSeen": "2025-09-24T11:45:00Z",
+      "photo": "https://i.pravatar.cc/150?u=george"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "userId": 1,
+      "text": "Hey Alice! How are you?",
+      "sender": "me",
+      "timestamp": "10:00 AM"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "text": "I’m good, thanks!",
+      "sender": "Alice",
+      "timestamp": "10:02 AM"
+    },
+    {
+      "id": "3",
+      "userId": 2,
+      "text": "Hello Bob!",
+      "sender": "me",
+      "timestamp": "09:50 AM"
+    },
+    {
+      "id": "4",
+      "userId": 3,
+      "text": "Yo Charlie!",
+      "sender": "me",
+      "timestamp": "11:10 AM"
+    },
+    {
+      "id": "ab18",
+      "userId": 1,
+      "text": "Hii",
+      "sender": "me",
+      "timestamp": "11:33:29 AM"
+    },
+    {
+      "id": "d2f6",
+      "userId": 1,
+      "text": "hi",
+      "sender": "me",
+      "timestamp": "11:56:12 AM"
+    },
+    {
+      "id": "25b6",
+      "userId": 1,
+      "text": "gggggg",
+      "sender": "me",
+      "timestamp": "11:56:18 AM"
+    },
+    {
+      "id": "e8a9",
+      "userId": 1,
+      "text": "hhhhhh",
+      "sender": "me",
+      "timestamp": "11:56:21 AM"
+    },
+    {
+      "id": "6878",
+      "userId": 5,
+      "text": "Hii",
+      "sender": "me",
+      "timestamp": "12:28:36 PM"
+    },
+    {
+      "id": "1ba5",
+      "userId": 1,
+      "text": "ddd",
+      "sender": "me",
+      "timestamp": "12:42:42 PM"
+    },
+    {
+      "id": "285b",
+      "userId": 1,
+      "text": "Hii",
+      "sender": "me",
+      "timestamp": "1:03:15 PM"
+    },
+    {
+      "id": "284a",
+      "userId": 7,
+      "text": "hh",
+      "sender": "me",
+      "timestamp": "9:03:19 PM"
+    },
+    {
+      "id": "0ac7",
+      "userId": 1,
+      "text": "hiii",
+      "sender": "me",
+      "timestamp": "9:19:03 PM"
+    },
+    {
+      "id": "90f0",
+      "userId": 1,
+      "text": "hloooo",
+      "sender": "me",
+      "timestamp": "9:19:10 PM"
+    },
+    {
+      "id": "2021",
+      "userId": 1,
+      "text": "😁",
+      "sender": "me",
+      "timestamp": "11:02:52 AM",
+      "delivered": true
+    },
+    {
+      "id": "468d",
+      "userId": 7,
+      "text": "Hii",
+      "sender": "me",
+      "timestamp": "12:43:21 PM",
+      "delivered": true
+    },
+    {
+      "id": "989b",
+      "userId": 7,
+      "text": "🦺",
+      "sender": "me",
+      "timestamp": "12:51:34 PM",
+      "delivered": true
+    }
+  ]
+}
