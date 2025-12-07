@@ -16,46 +16,51 @@ function ChatPage() {
   const [theme] = useContext(ThemeContext);
   const isDark = theme === "dark";
 
+  // Load selected user from message.json
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${id}`)
+    fetch("/message.json")
       .then((res) => res.json())
-      .then((data) => setUser(data))
+      .then((data) => {
+        const selectedUser = data.users.find((u) => u.id == id);
+        setUser(selectedUser);
+      })
       .catch((err) => console.error(err));
   }, [id]);
 
+  // Load messages for this user from message.json
   useEffect(() => {
-    fetch(`http://localhost:3000/messages?userId=${id}`)
+    fetch("/message.json")
       .then((res) => res.json())
-      .then((data) => setMessages(data))
+      .then((data) => {
+        const userMsgs = data.messages.filter((m) => m.userId == id);
+        setMessages(userMsgs);
+      })
       .catch((err) => console.error(err));
   }, [id]);
 
+  // Scroll to bottom when messages update
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  // Add new message (temporary, UI only)
   const handleSend = () => {
     if (!input.trim()) return;
+
     const newMessage = {
+      id: Date.now().toString(),
       userId: Number(id),
       text: input,
       sender: "me",
       timestamp: new Date().toLocaleTimeString(),
       delivered: true,
     };
-    fetch("http://localhost:3000/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newMessage),
-    })
-      .then((res) => res.json())
-      .then((saved) => {
-        setMessages((prev) => [...prev, saved]);
-        setInput("");
-      })
-      .catch((err) => console.error(err));
+
+    setMessages((prev) => [...prev, newMessage]);
+    setInput("");
   };
 
+  // Add emoji to input
   const handleEmojiClick = (emojiData) =>
     setInput((prev) => prev + emojiData.emoji);
 
@@ -65,12 +70,10 @@ function ChatPage() {
         isDark ? "bg-gray-900 text-white" : "bg-indigo-50 text-gray-900"
       }`}
     >
-      {/* Chat Header (fixed at top inside chat) */}
+      {/* Chat Header */}
       <div
         className={`flex-shrink-0 p-4 border-b flex items-center gap-3 ${
-          isDark
-            ? "bg-gray-800 border-gray-700"
-            : "bg-white/80 border-gray-200"
+          isDark ? "bg-gray-800 border-gray-700" : "bg-white/80 border-gray-200"
         }`}
       >
         {user ? (
@@ -86,9 +89,7 @@ function ChatPage() {
               </h2>
               <span
                 className={`text-sm ${
-                  user.status === "online"
-                    ? "text-green-500"
-                    : "text-red-500"
+                  user.status === "online" ? "text-green-500" : "text-red-500"
                 }`}
               >
                 {user.status}
@@ -106,7 +107,7 @@ function ChatPage() {
         )}
       </div>
 
-      {/* Scrollable Messages */}
+      {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-indigo-400 scrollbar-track-transparent">
         <AnimatePresence>
           {messages.map((msg) => (
@@ -144,12 +145,10 @@ function ChatPage() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Input (fixed at bottom) */}
+      {/* Input */}
       <div
         className={`flex-shrink-0 p-4 border-t flex gap-2 items-center ${
-          isDark
-            ? "bg-gray-800 border-gray-700"
-            : "bg-white/80 border-gray-200"
+          isDark ? "bg-gray-800 border-gray-700" : "bg-white/80 border-gray-200"
         }`}
       >
         <button

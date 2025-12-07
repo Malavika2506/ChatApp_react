@@ -6,10 +6,10 @@ function Sidebar({ isOpen, toggleSidebar }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
-      .then(res => res.json())
-      .then(data => setUsers(data))
-      .catch(err => console.error(err));
+    fetch("/message.json")
+      .then((res) => res.json())
+      .then((data) => setUsers(data.users)) // important: extract users array
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -39,7 +39,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
         {/* User List */}
         <nav className="mt-6 flex flex-col gap-1 overflow-y-auto h-[calc(100vh-100px)] pr-2 scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-gray-900">
           {users.length > 0 ? (
-            users.map(user => (
+            users.map((user) => (
               <NavLink
                 key={user.id}
                 to={`/dashboard/users/${user.id}`}
